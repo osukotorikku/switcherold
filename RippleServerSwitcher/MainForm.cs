@@ -86,7 +86,6 @@ namespace RippleServerSwitcher
                 switcher.Settings = await SettingsManager.Load();
                 if (switcher.Settings.LatestChangelog != Program.VersionNumber)
                 {
-                    new ChangelogForm().ShowDialog();
                     switcher.Settings.LatestChangelog = Program.VersionNumber;
                     await switcher.Settings.Save();
                 }
@@ -98,23 +97,6 @@ namespace RippleServerSwitcher
                 catch (HumanReadableException ex)
                 {
                     latestException = ex;
-                }
-
-                bottomText = "Checking updates...";
-                try
-                {
-                    await updater.CheckUpdates();
-                    if (updater.NewUpdateAvailable)
-                    {
-                        DialogResult result = MessageBox.Show("There's a new update available. Do you want to download it now?", "Updater", MessageBoxButtons.YesNo);
-                        if (result == DialogResult.Yes)
-                            startUpdater();
-                    }
-                    bottomText = "";
-                }
-                catch
-                {
-                    latestException = new HumanReadableException("Error while checking for updates.");
                 }
 
                 inspectButton.Enabled = true;
@@ -129,8 +111,8 @@ namespace RippleServerSwitcher
         private void updateStatus()
         {
             bool ripple = switcher.IsConnectedToRipple();
-            statusLabel.Text = String.Format("You are connected to {0}", ripple ? "ripple" : "osu!");
-            switchButton.Text = String.Format("Switch to {0}", ripple ? "osu!" : "ripple");
+            statusLabel.Text = String.Format("You are connected to {0}", ripple ? "kotorikku" : "osu!");
+            switchButton.Text = String.Format("Switch to {0}", ripple ? "osu!" : "kotorikku");
             switchButton.Font = new Font(switchButton.Font, ripple ? FontStyle.Regular : FontStyle.Bold);
         }
 

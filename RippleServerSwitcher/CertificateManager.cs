@@ -50,7 +50,7 @@ namespace RippleServerSwitcher
                         throw new HumanReadableException(
                             "You must install the certificate.",
                             "The certificate is needed to connect to Ripple through HTTPs. Without it, you won't be able to connect. " +
-                            "Click on 'Switch to ripple', then 'Yes' to install the certificate and switch to Ripple."
+                            "Click on 'Switch to kotorikku', then 'Yes' to install the certificate and switch to Kotorikku."
                         );
                     }
             }

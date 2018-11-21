@@ -117,11 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Checks if the redirection and the certificate work correctly. If you see all 'OK', you should be able to connect from the osu! client. If you get 'CERT ERROR', try uninstalling and reinstalling the certificate.</value>
-  </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>The hosts files maps hostnames to IP addresses. It's used to redirect the osu! client traffic from the official server to Ripple. If the hosts file is not readable or writable, disabling your antivirus often works.
+    <value>The hosts files maps hostnames to IP addresses. It's used to redirect the osu! client traffic from the official server to Kotorikku. If the hosts file is not readable or writable, disabling your antivirus often works.
 </value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />

@@ -129,15 +129,14 @@ namespace RippleServerSwitcher
             this.genuineTheme1.Font = new System.Drawing.Font("Verdana", 8F);
             this.genuineTheme1.Image = null;
             this.genuineTheme1.Location = new System.Drawing.Point(0, 0);
-            this.genuineTheme1.Margin = new System.Windows.Forms.Padding(4);
             this.genuineTheme1.Movable = true;
             this.genuineTheme1.Name = "genuineTheme1";
             this.genuineTheme1.NoRounding = false;
             this.genuineTheme1.Sizable = false;
-            this.genuineTheme1.Size = new System.Drawing.Size(340, 169);
+            this.genuineTheme1.Size = new System.Drawing.Size(272, 135);
             this.genuineTheme1.SmartBounds = true;
             this.genuineTheme1.TabIndex = 0;
-            this.genuineTheme1.Text = "Ripple Server Switcher";
+            this.genuineTheme1.Text = "Kotorikku Server Switcher";
             this.genuineTheme1.TransparencyKey = System.Drawing.Color.Fuchsia;
             // 
             // inspectButton
@@ -167,11 +166,10 @@ namespace RippleServerSwitcher
             this.inspectButton.Customization = "KSkp/zMzM/8zMzP/KSkp//////////8MGRkZ/w==";
             this.inspectButton.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Italic);
             this.inspectButton.Image = null;
-            this.inspectButton.Location = new System.Drawing.Point(175, 106);
-            this.inspectButton.Margin = new System.Windows.Forms.Padding(4);
+            this.inspectButton.Location = new System.Drawing.Point(140, 85);
             this.inspectButton.Name = "inspectButton";
             this.inspectButton.NoRounding = false;
-            this.inspectButton.Size = new System.Drawing.Size(150, 31);
+            this.inspectButton.Size = new System.Drawing.Size(120, 25);
             this.inspectButton.TabIndex = 13;
             this.inspectButton.Text = "Inspect";
             this.inspectButton.Transparent = false;
@@ -204,11 +202,10 @@ namespace RippleServerSwitcher
             this.aboutButton.Customization = "KSkp/zMzM/8zMzP/KSkp//////////8MGRkZ/w==";
             this.aboutButton.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Italic);
             this.aboutButton.Image = null;
-            this.aboutButton.Location = new System.Drawing.Point(20, 106);
-            this.aboutButton.Margin = new System.Windows.Forms.Padding(4);
+            this.aboutButton.Location = new System.Drawing.Point(16, 85);
             this.aboutButton.Name = "aboutButton";
             this.aboutButton.NoRounding = false;
-            this.aboutButton.Size = new System.Drawing.Size(150, 31);
+            this.aboutButton.Size = new System.Drawing.Size(120, 25);
             this.aboutButton.TabIndex = 12;
             this.aboutButton.Text = "About";
             this.aboutButton.Transparent = false;
@@ -218,16 +215,18 @@ namespace RippleServerSwitcher
             // 
             this.bottomStatusPanel.Controls.Add(this.bottomStatusPicture);
             this.bottomStatusPanel.Controls.Add(this.bottomStatusLabel);
-            this.bottomStatusPanel.Location = new System.Drawing.Point(20, 142);
+            this.bottomStatusPanel.Location = new System.Drawing.Point(16, 114);
+            this.bottomStatusPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bottomStatusPanel.Name = "bottomStatusPanel";
-            this.bottomStatusPanel.Size = new System.Drawing.Size(305, 24);
+            this.bottomStatusPanel.Size = new System.Drawing.Size(244, 19);
             this.bottomStatusPanel.TabIndex = 11;
             // 
             // bottomStatusPicture
             // 
-            this.bottomStatusPicture.Location = new System.Drawing.Point(4, 2);
+            this.bottomStatusPicture.Location = new System.Drawing.Point(3, 2);
+            this.bottomStatusPicture.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bottomStatusPicture.Name = "bottomStatusPicture";
-            this.bottomStatusPicture.Size = new System.Drawing.Size(20, 21);
+            this.bottomStatusPicture.Size = new System.Drawing.Size(16, 17);
             this.bottomStatusPicture.TabIndex = 8;
             this.bottomStatusPicture.TabStop = false;
             // 
@@ -235,9 +234,10 @@ namespace RippleServerSwitcher
             // 
             this.bottomStatusLabel.AutoSize = true;
             this.bottomStatusLabel.ForeColor = System.Drawing.Color.Silver;
-            this.bottomStatusLabel.Location = new System.Drawing.Point(21, 1);
+            this.bottomStatusLabel.Location = new System.Drawing.Point(17, 1);
+            this.bottomStatusLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bottomStatusLabel.Name = "bottomStatusLabel";
-            this.bottomStatusLabel.Size = new System.Drawing.Size(78, 17);
+            this.bottomStatusLabel.Size = new System.Drawing.Size(63, 13);
             this.bottomStatusLabel.TabIndex = 9;
             this.bottomStatusLabel.Text = "Loading...";
             this.bottomStatusLabel.DoubleClick += new System.EventHandler(this.bottomStatusLabel_DoubleClick);
@@ -269,11 +269,10 @@ namespace RippleServerSwitcher
             this.switchButton.Customization = "KSkp/zMzM/8zMzP/KSkp//////////8MGRkZ/w==";
             this.switchButton.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold);
             this.switchButton.Image = null;
-            this.switchButton.Location = new System.Drawing.Point(20, 72);
-            this.switchButton.Margin = new System.Windows.Forms.Padding(4);
+            this.switchButton.Location = new System.Drawing.Point(16, 58);
             this.switchButton.Name = "switchButton";
             this.switchButton.NoRounding = false;
-            this.switchButton.Size = new System.Drawing.Size(305, 31);
+            this.switchButton.Size = new System.Drawing.Size(244, 25);
             this.switchButton.TabIndex = 2;
             this.switchButton.Text = "On/Off";
             this.switchButton.Transparent = false;
@@ -283,10 +282,9 @@ namespace RippleServerSwitcher
             // 
             this.statusLabel.BackColor = System.Drawing.Color.Transparent;
             this.statusLabel.ForeColor = System.Drawing.Color.White;
-            this.statusLabel.Location = new System.Drawing.Point(0, 43);
-            this.statusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.statusLabel.Location = new System.Drawing.Point(0, 34);
             this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(340, 25);
+            this.statusLabel.Size = new System.Drawing.Size(272, 20);
             this.statusLabel.TabIndex = 1;
             this.statusLabel.Text = "Loading...";
             this.statusLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -318,11 +316,10 @@ namespace RippleServerSwitcher
             this.closeButton.Customization = "KSkp/zMzM/8zMzP/KSkp//////////8MGRkZ/w==";
             this.closeButton.Font = new System.Drawing.Font("Verdana", 8F);
             this.closeButton.Image = null;
-            this.closeButton.Location = new System.Drawing.Point(310, 4);
-            this.closeButton.Margin = new System.Windows.Forms.Padding(4);
+            this.closeButton.Location = new System.Drawing.Point(248, 3);
             this.closeButton.Name = "closeButton";
             this.closeButton.NoRounding = false;
-            this.closeButton.Size = new System.Drawing.Size(26, 22);
+            this.closeButton.Size = new System.Drawing.Size(21, 18);
             this.closeButton.TabIndex = 0;
             this.closeButton.Text = "x";
             this.closeButton.Transparent = false;
@@ -330,13 +327,12 @@ namespace RippleServerSwitcher
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(340, 169);
+            this.ClientSize = new System.Drawing.Size(272, 135);
             this.Controls.Add(this.genuineTheme1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "DAT SWITCHER";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;

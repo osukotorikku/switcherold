@@ -94,8 +94,6 @@ namespace RippleServerSwitcher
             updateCertificateStatus();
             await updateHostsFileStatus();
             await updateIPServerStatus();
-            if (Program.Switcher.IsConnectedToRipple())
-                await testRippleConnection();
         }
 
         private async void hostsHelpButton_Click(object sender, EventArgs e)
@@ -131,72 +129,7 @@ namespace RippleServerSwitcher
             }
         }
 
-        private async void testRippleConnectionButton_Click(object sender, EventArgs e)
-        {
-            if (!Program.Switcher.IsConnectedToRipple())
-            {
-                MessageBox.Show("You must be connected to Ripple to perform the connection test.");
-                return;
-            }
-            await testRippleConnection();
-        }
-
-        private async Task testRippleConnection()
-        {
-            testRippleConnectionButton.Enabled = false;
-            var labels = new Label[] { banchoRippleStatusLabel, banchoOsuStatusLabel, scoresRippleStatusLabel, scoresOsuStatusLabel };
-            foreach (Label label in labels)
-            {
-                label.Text = "...";
-                label.ForeColor = Color.White;
-            }
-
-            try
-            {
-                var domains = new string[]
-                {
-                    "https://c.ripple.moe",
-                    "https://c.ppy.sh",
-                    "https://ripple.moe/web/",
-                    "https://osu.ppy.sh/web/"
-                };
-                var checkers = domains.Zip(labels, (d, l) => (new ConnectionChecker(d), l));
-                foreach ((ConnectionChecker checker, Label label) in checkers)
-                {
-                    try
-                    {
-                        await checker.Check();
-                        label.Text = "OK";
-                        label.ForeColor = Color.Green;
-                    }
-                    catch (NonOkResponse ex)
-                    {
-                        label.Text = String.Format("ERROR {0}", ex.StatusCode);
-                        label.ForeColor = Color.Red;
-                    }
-                    catch (CertificateException)
-                    {
-                        label.Text = "CERT ERROR";
-                        label.ForeColor = Color.Red;
-                    }
-                    catch (NoRedirectionException)
-                    {
-                        label.Text = "NOT RIPPLE";
-                        label.ForeColor = Color.Red;
-                    }
-                    catch (Exception ex)
-                    {
-                        label.Text = String.Format("ERROR");
-                        label.ForeColor = Color.Red;
-                        MessageBox.Show(String.Format("Couldn't connect to {0}:\n\n{1}", checker.Endpoint, ex.ToString()));
-                    }
-                }
-            }
-            finally
-            {
-                testRippleConnectionButton.Enabled = true;
-            }
-        }
+      
 
         private void closeButton_Click(object sender, EventArgs e) => Close();
     }
@@ -228,7 +161,7 @@ namespace RippleServerSwitcher
                 {
                     if (result.StatusCode != HttpStatusCode.OK)
                         throw new NonOkResponse(result.StatusCode);
-                    if (!((await result.Content.ReadAsStringAsync()).ToLower().Contains("ripple")))
+                    if (!((await result.Content.ReadAsStringAsync()).ToLower().Contains("kotorikku")))
                         throw new NoRedirectionException();
                 }
             }
