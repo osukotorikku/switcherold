@@ -35,7 +35,8 @@ namespace RippleServerSwitcher
             new HostsEntry{domain="a.ppy.sh", ip="142.93.172.159"},
             new HostsEntry{domain="s.ppy.sh", ip="142.93.172.159"},
             new HostsEntry{domain="i.ppy.sh", ip="142.93.172.159"},
-            new HostsEntry{domain="bm6.ppy.sh", ip="142.93.172.159"}
+            new HostsEntry{domain="bm6.ppy.sh", ip="142.93.172.159"},
+            new HostsEntry{domain="ce.ppy.sh", ip="142.93.172.159"}
         }.Concat(
             (from x in Enumerable.Range(1, 6) select
                 new HostsEntry{ domain=String.Format("c{0}.ppy.sh", x), ip= "142.93.172.159" }
