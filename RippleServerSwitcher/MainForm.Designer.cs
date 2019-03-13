@@ -136,7 +136,7 @@ namespace RippleServerSwitcher
             this.genuineTheme1.Size = new System.Drawing.Size(272, 135);
             this.genuineTheme1.SmartBounds = true;
             this.genuineTheme1.TabIndex = 0;
-            this.genuineTheme1.Text = "Kotorikku Server Switcher";
+            this.genuineTheme1.Text = "Kurikku Server Switcher";
             this.genuineTheme1.TransparencyKey = System.Drawing.Color.Fuchsia;
             // 
             // inspectButton

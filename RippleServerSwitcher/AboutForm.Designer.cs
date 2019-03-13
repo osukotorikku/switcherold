@@ -199,7 +199,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(158, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Kotorikku Server Switcher";
+            this.label2.Text = "Kurikku Server Switcher";
             // 
             // AboutForm
             // 

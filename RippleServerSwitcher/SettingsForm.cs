@@ -39,6 +39,8 @@ namespace RippleServerSwitcher
             certificateLabel.Text = installed ? "INSTALLED" : "NOT INSTALLED";
             certificateLabel.ForeColor = installed ? Color.Green : Color.Red;
             certificateButton.Text = (installed ? "Uninstall" : "Install") + " certificate";
+
+            certificateInfo.Text = "Certificate by "+Program.Switcher.CertificateManager.GetCertificatePublisher();
         }
 
         private async Task updateHostsFileStatus()
@@ -161,7 +163,7 @@ namespace RippleServerSwitcher
                 {
                     if (result.StatusCode != HttpStatusCode.OK)
                         throw new NonOkResponse(result.StatusCode);
-                    if (!((await result.Content.ReadAsStringAsync()).ToLower().Contains("kotorikku")))
+                    if (!((await result.Content.ReadAsStringAsync()).ToLower().Contains("kurikku")))
                         throw new NoRedirectionException();
                 }
             }

@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // Le informazioni generali relative a un assembly sono controllate dal seguente 
 // set di attributi. Modificare i valori di questi attributi per modificare le informazioni
 // associate a un assembly.
-[assembly: AssemblyTitle("Kotorikku Server Switcher")]
-[assembly: AssemblyDescription("Switch between Kotorikku and osu!")]
+[assembly: AssemblyTitle("Kurikku Server Switcher")]
+[assembly: AssemblyDescription("Switch between Kurikku and osu!")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Kotorikku project, co., LTD.")]
-[assembly: AssemblyProduct("Kotorikku Server Switcher")]
-[assembly: AssemblyCopyright("© Ripple|x|Kotorikku")]
+[assembly: AssemblyCompany("Kurikku project, co., LTD.")]
+[assembly: AssemblyProduct("Kurikku Server Switcher")]
+[assembly: AssemblyCopyright("© Ripple|x|Kurikku")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

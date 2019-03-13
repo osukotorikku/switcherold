@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace RippleServerSwitcher
 {
@@ -29,17 +30,17 @@ namespace RippleServerSwitcher
     {
         public static readonly HostsEntry[] FallbackOfflineIPs = new HostsEntry[]
         {
-            new HostsEntry{domain="osu.ppy.sh", ip="142.93.172.159"},
-            new HostsEntry{domain="c.ppy.sh", ip="142.93.172.159"},
-            new HostsEntry{domain="ce.ppy.sh", ip="142.93.172.159"},
-            new HostsEntry{domain="a.ppy.sh", ip="142.93.172.159"},
-            new HostsEntry{domain="s.ppy.sh", ip="142.93.172.159"},
-            new HostsEntry{domain="i.ppy.sh", ip="142.93.172.159"},
-            new HostsEntry{domain="bm6.ppy.sh", ip="142.93.172.159"},
-            new HostsEntry{domain="ce.ppy.sh", ip="142.93.172.159"}
+            new HostsEntry{domain="osu.ppy.sh", ip="51.15.117.225"},
+            new HostsEntry{domain="c.ppy.sh", ip="51.15.117.225"},
+            new HostsEntry{domain="ce.ppy.sh", ip="51.15.117.225"},
+            new HostsEntry{domain="a.ppy.sh", ip="51.15.117.225"},
+            new HostsEntry{domain="s.ppy.sh", ip="51.15.117.225"},
+            new HostsEntry{domain="i.ppy.sh", ip="51.15.117.225"},
+            new HostsEntry{domain="bm6.ppy.sh", ip="46.101.90.11"},
+            new HostsEntry{domain="ce.ppy.sh", ip="51.15.117.225"}
         }.Concat(
             (from x in Enumerable.Range(1, 6) select
-                new HostsEntry{ domain=String.Format("c{0}.ppy.sh", x), ip= "142.93.172.159" }
+                new HostsEntry{ domain=String.Format("c{0}.ppy.sh", x), ip= "51.15.117.225" }
             ).ToArray()
         ).ToArray();
 
@@ -94,7 +95,7 @@ namespace RippleServerSwitcher
             }
             await hostsFile.Parse();
             if (IsConnectedToRipple())
-                throw new HumanReadableException("Can't delete entries. Disable antivirus.", "The hosts file looks writable, but Kotorikku Server Switcher wasn't able to delete the entries from it and switch back to osu!. There is most likely a software blocking access to the hosts file. Please disable your antivirus, third party firewall or any similar software that may block edits on the hosts file.");
+                throw new HumanReadableException("Can't delete entries. Disable antivirus.", "The hosts file looks writable, but Kurikku Server Switcher wasn't able to delete the entries from it and switch back to osu!. There is most likely a software blocking access to the hosts file. Please disable your antivirus, third party firewall or any similar software that may block edits on the hosts file.");
         }
         
         public async Task ConnectToRipple()
@@ -104,7 +105,7 @@ namespace RippleServerSwitcher
             {
                 await UpdateIPs();
             }
-            catch (UpdateIPsFailedException) { }
+            catch (UpdateIPsFailedException) {}
 
             await hostsFile.Parse();
             hostsFile.semaphore.Wait();
@@ -120,7 +121,7 @@ namespace RippleServerSwitcher
             }
             await hostsFile.Parse();
             if (!IsConnectedToRipple())
-                throw new HumanReadableException("Can't write entries. Disable antivirus.", "The hosts file looks writable, but Kotorikku Server Switcher wasn't able to write the required entries to it and switch to ripple. There is most likely a software blocking access to the hosts file. Please disable your antivirus, third party firewall or any similar software that may block edits on the hosts file.");
+                throw new HumanReadableException("Can't write entries. Disable antivirus.", "The hosts file looks writable, but Kurikku Server Switcher wasn't able to write the required entries to it and switch to ripple. There is most likely a software blocking access to the hosts file. Please disable your antivirus, third party firewall or any similar software that may block edits on the hosts file.");
         }
 
         public async Task UpdateIPs()
@@ -129,7 +130,7 @@ namespace RippleServerSwitcher
             Dictionary<string, string> redirections = new Dictionary<string, string>();
             try
             {
-                using (var result = await httpClient.GetAsync("https://ip.kotorikku.ru/current.json"))
+                using (var result = await httpClient.GetAsync("https://ip.kurikku.pw/current.json"))
                 {
                     string content = await result.Content.ReadAsStringAsync();
                     redirections = JsonConvert.DeserializeObject<Dictionary<string, string>>(content);
@@ -149,6 +150,10 @@ namespace RippleServerSwitcher
 
             if (fromInternet)
             {
+                Settings.IPsBackup = RippleHostsEntries;
+                await Settings.Save();
+            }
+            else {
                 Settings.IPsBackup = RippleHostsEntries;
                 await Settings.Save();
             }

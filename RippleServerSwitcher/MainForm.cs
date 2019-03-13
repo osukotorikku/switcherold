@@ -58,7 +58,7 @@ namespace RippleServerSwitcher
         {
             InitializeComponent();
             
-            new ToolTip().SetToolTip(this.switchButton, "Switch between osu! and ripple");
+            new ToolTip().SetToolTip(this.switchButton, "Switch between osu! and kurikku");
         }
 
         private static bool isRunningAsAdmin()
@@ -101,6 +101,7 @@ namespace RippleServerSwitcher
 
                 inspectButton.Enabled = true;
                 updateStatus();
+                bottomText = "";
             }
             catch (Exception ex)
             {
@@ -111,8 +112,8 @@ namespace RippleServerSwitcher
         private void updateStatus()
         {
             bool ripple = switcher.IsConnectedToRipple();
-            statusLabel.Text = String.Format("You are connected to {0}", ripple ? "kotorikku" : "osu!");
-            switchButton.Text = String.Format("Switch to {0}", ripple ? "osu!" : "kotorikku");
+            statusLabel.Text = String.Format("You are connected to {0}", ripple ? "kurikku" : "osu!");
+            switchButton.Text = String.Format("Switch to {0}", ripple ? "osu!" : "kurikku");
             switchButton.Font = new Font(switchButton.Font, ripple ? FontStyle.Regular : FontStyle.Bold);
         }
 

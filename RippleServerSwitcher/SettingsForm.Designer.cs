@@ -75,6 +75,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.certificateInfo = new System.Windows.Forms.Label();
             this.certificateLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -153,7 +154,7 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(455, 216);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(227, 52);
+            this.label9.Size = new System.Drawing.Size(215, 52);
             this.label9.TabIndex = 23;
             this.label9.Text = "＼(＾▽＾)／";
             // 
@@ -215,10 +216,10 @@
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.MaximumSize = new System.Drawing.Size(206, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(191, 65);
+            this.label11.Size = new System.Drawing.Size(204, 65);
             this.label11.TabIndex = 27;
-            this.label11.Text = "Checks if the server that serves up to date redirections for Kotorikku is online " +
-    "or not. If it\'s offline, the fallback redirections will be used instead.";
+            this.label11.Text = "Checks if the server that serves up to date redirections for Kurikku is online or" +
+    " not. If it\'s offline, the fallback redirections will be used instead.";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ipServerStatusLabel
@@ -283,9 +284,9 @@
             this.label5.Location = new System.Drawing.Point(20, 43);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 13);
+            this.label5.Size = new System.Drawing.Size(56, 13);
             this.label5.TabIndex = 23;
-            this.label5.Text = "Kotorikku:";
+            this.label5.Text = "Kurikku:";
             // 
             // hostsFileWritableLabel
             // 
@@ -383,6 +384,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.certificateInfo);
             this.groupBox3.Controls.Add(this.certificateLabel);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.label3);
@@ -397,12 +399,24 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Certificate";
             // 
+            // certificateInfo
+            // 
+            this.certificateInfo.AutoSize = true;
+            this.certificateInfo.Font = new System.Drawing.Font("Verdana", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.certificateInfo.ForeColor = System.Drawing.Color.White;
+            this.certificateInfo.Location = new System.Drawing.Point(8, 37);
+            this.certificateInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.certificateInfo.Name = "certificateInfo";
+            this.certificateInfo.Size = new System.Drawing.Size(118, 10);
+            this.certificateInfo.TabIndex = 20;
+            this.certificateInfo.Text = "certificate by <UNKNOWN>";
+            // 
             // certificateLabel
             // 
             this.certificateLabel.AutoSize = true;
             this.certificateLabel.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold);
             this.certificateLabel.ForeColor = System.Drawing.Color.White;
-            this.certificateLabel.Location = new System.Drawing.Point(50, 24);
+            this.certificateLabel.Location = new System.Drawing.Point(50, 19);
             this.certificateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.certificateLabel.Name = "certificateLabel";
             this.certificateLabel.Size = new System.Drawing.Size(19, 13);
@@ -413,7 +427,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(4, 24);
+            this.label4.Location = new System.Drawing.Point(4, 19);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 13);
@@ -491,10 +505,10 @@
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.MaximumSize = new System.Drawing.Size(206, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(204, 65);
+            this.label1.Size = new System.Drawing.Size(197, 65);
             this.label1.TabIndex = 16;
-            this.label1.Text = "These redirections will be applied to your hosts file when switching to Kotorikku" +
-    ". They\'re always up to date and fetched from ip.kotorikku.ru";
+            this.label1.Text = "These redirections will be applied to your hosts file when switching to Kurikku. " +
+    "They\'re always up to date and fetched from ip.kurikku.pw";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // currentDomains
@@ -534,8 +548,8 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(205, 52);
             this.label2.TabIndex = 17;
-            this.label2.Text = "These redirections will be applied to your hosts file when switching to Kotorikku" +
-    " if our remote redirections endpoint  goes offline.";
+            this.label2.Text = "These redirections will be applied to your hosts file when switching to Kurikku i" +
+    "f our remote redirections endpoint  goes offline.";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // fallbackDomains
@@ -610,5 +624,6 @@
         private System.Windows.Forms.Label label11;
         private GenuineButton closeButton;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label certificateInfo;
     }
 }
